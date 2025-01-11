@@ -1,0 +1,27 @@
+
+
+local mapIDs = {2753915549, 4442272183, 7449423635, 16732694052}
+
+local function loadScript(url)
+    local success, result = pcall(function()
+        return loadstring(game:HttpGet(url))()
+    end)
+    if not success then
+        warn("ไม่สามารถโหลดสคริปต์ได้:", result)
+        game.Players.LocalPlayer:Kick("ยังไม่ได้ทำสคริปแมพนี้คนสร้างนอนอ้วนอยู่")
+    end
+end
+
+if table.find(mapIDs, game.PlaceId) then
+    if game.PlaceId == 2753915549 then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SaiyKub/MavixHubb/refs/heads/main/BF_MavixHub.lua"))()
+    elseif game.PlaceId == 4442272183 then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SaiyKub/MavixHubb/refs/heads/main/BF_MavixHub.lua"))()
+    elseif game.PlaceId == 7449423635 then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SaiyKub/MavixHubb/refs/heads/main/BF_MavixHub.lua"))()
+    elseif game.PlaceId == 16732694052 then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SaiyKub/MavixHub/refs/heads/main/MavixHub_Fisch.txt"))()
+    end
+else
+    game.Players.LocalPlayer:Kick("ยังไม่ได้ทำสคริปแมพนี้คนสร้างนอนอ้วนอยู่")
+end
